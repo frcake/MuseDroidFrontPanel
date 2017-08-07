@@ -6,6 +6,24 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    // Initialize Firebase
+    firebase: {
+      apiKey: "AIzaSyBhFng71HWLG18nkcRHRv3pB0dV_XipOIk",
+      authDomain: "musedroid-164d2.firebaseapp.com",
+      databaseURL: "https://musedroid-164d2.firebaseio.com",
+      projectId: "musedroid-164d2",
+      storageBucket: "musedroid-164d2.appspot.com",
+      messagingSenderId: "59022040333"
+
+    },
+
+     contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

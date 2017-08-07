@@ -1,0 +1,22 @@
+<!-- app/templates/libraries/index.hbs -->
+<h2>List</h2>
+<div class="row">
+  {{#each model as |museum|}}
+    <div class="col-md-4">
+      <div class="panel panel-default library-item">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{museum.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <p>Description: {{museum.description}}</p>
+          <p>Longitude: {{museum.lon}}</p>
+          <p>Latitude: {{museum.lat}}</p>
+        </div>
+        <div class="panel-footer text-right">
+          {{#link-to 'museums.edit' museum.id class='btn btn-success btn-xs' }}Edit{{/link-to}}
+          <button class="btn btn-danger btn-xs" {{action 'deleteMuseum' museum}}>Delete</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

@@ -1,0 +1,16 @@
+<!-- /app/templates/libraries/form.hbs -->
+<h2>{{name}}</h2>
+
+<div class="row">
+
+  <div class="col-md-6">
+    {{museum-item-form item=model buttonLabel=buttonLabel action='saveMuseum'}}
+  </div>
+
+  <div class="col-md-4">
+    {{#museum-item item=model}}
+      <br/>
+    {{/museum-item}}
+  </div>
+
+</div>
