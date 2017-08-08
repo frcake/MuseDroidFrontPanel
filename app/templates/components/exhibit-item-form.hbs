@@ -13,19 +13,21 @@
       {{textarea type="text" value=item.exhibit.description class="form-control" placeholder="Exhibit's description"}}
     </div>
   </div>
+
   <div class="form-group">
     <label class="col-sm-2 control-label">Description</label>
     <div class="col-sm-10">
-      {{#power-select class="museum" searchEnabled=false selected=item.exhibit.museum options=item.museum onchange=(action (mut item.exhibit.museum)) as |museum| }}
+      {{#power-select class="museum" searchEnabled=true selected=museum options=item.museum onchange=(action (mut museum)) as |museum| }}
         {{museum.name}}
       {{/power-select}}
     </div>
+
   </div>
 
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default" {{action 'buttonClicked' item.exhibit}} disabled= {{unless item.exhibit.isValid true}}>{{buttonLabel}}</button>
+      <button type="submit" class="btn btn-default" {{action 'buttonClicked' item.exhibit museum item.exhibit.museum}} disabled= {{unless item.exhibit.isValid true}}>{{buttonLabel}}</button>
     </div>
   </div>
 </div>
