@@ -4,13 +4,13 @@ export default Ember.Controller.extend({
 
   actions: {
 
-    saveExhibit(newExhibit, museum/*,exhibitMuseum*/) {
+    saveExhibit(newExhibit, exhibitMuseum, museum) {
       var controller = this;
 
       // console.log(exhibitMuseum);
-      newExhibit.set('museum', museum);
-      museum.get('exhibits').addObject(newExhibit);
-
+      //newExhibit.set('exhibitMuseum', exhibitMuseum);
+      exhibitMuseum.get('exhibits').addObject(newExhibit);
+      museum = exhibitMuseum;
       newExhibit.save().then(function() {
         museum.save().then(function() {
           controller.transitionToRoute('exhibits');

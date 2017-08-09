@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   actions: {
 
     saveExhibit(newExhibit, museum) {
-      exhibit.save().then(() => this.transitionTo('exhibits'));
+      //exhibit.save().then(() => this.transitionTo('exhibits'));
 
       var controller = this;
 
