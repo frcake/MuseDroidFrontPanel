@@ -10,5 +10,6 @@ export default DS.Model.extend({
     async: true,
     inverse: null
   }),
-  isValid: Ember.computed.notEmpty('name')
+  isValid: Ember.computed.notEmpty('name'),
+  fields:DS.hasMany('museum-field',{async: true})
 });

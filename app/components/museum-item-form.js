@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+ store: Ember.inject.service(),
   buttonLabel: 'Save',
 
   actions: {
@@ -8,5 +9,5 @@ export default Ember.Component.extend({
       this.sendAction('action', param);
     }
   }
-  
+
 });
