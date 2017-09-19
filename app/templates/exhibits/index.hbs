@@ -1,24 +1,20 @@
 <!-- app/templates/libraries/index.hbs -->
 <h2>List</h2>
-<div class="row">
-  {{#each model as |exhibit|}}
-    <div class="col-md-4">
-      <div class="panel panel-default library-item">
-        <div class="panel-heading">
-          <h3 class="panel-title">{{#link-to 'exhibits.show' exhibit}}{{exhibit.name}}{{/link-to}}</h3>
-        </div>
-        <div class="panel-body">
-          <p>Description: {{exhibit.description}}</p>
-        </div>
-        <div class="panel-body">
-          <p>Museum: {{exhibit.museum.name}}</p>
-        </div>
-        <div class="panel-footer text-right">
-          {{#link-to 'exhibits.edit' exhibit.id class='btn btn-success btn-xs' }}Edit{{/link-to}}
-          {{#link-to 'exhibits.show' exhibit.id class='btn btn-success btn-xs' }}Add fields{{/link-to}}
-          <button class="btn btn-danger btn-xs" {{action 'deleteExhibit' exhibit}}>Delete</button>
-        </div>
+
+{{#each model as |exhibit|}}
+  <div class="col-md-4">
+    <div class="panel panel-default library-item">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{#link-to 'exhibits.show' exhibit}}Name: {{exhibit.name}}{{/link-to}}</h3>
+      </div>
+      <div class="panel-body">
+        <p>Museum: {{exhibit.museum.name}}</p>
+      </div>
+      <div class="panel-footer text-right">
+        {{#link-to 'exhibits.edit' exhibit.id class='btn btn-success btn-xs' }}Edit{{/link-to}}
+        {{#link-to 'exhibits.show' exhibit.id class='btn btn-success btn-xs' }}Add fields{{/link-to}}
+        <button class="btn btn-danger btn-xs" {{action 'deleteExhibit' exhibit}}>Delete</button>
       </div>
     </div>
-  {{/each}}
-</div>
+  </div>
+{{/each}}

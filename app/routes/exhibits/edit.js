@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   // },
   model(params) {
     return Ember.RSVP.hash({
-      exhibit: this.store.findRecord('exhibit', params.exhibit_id),
+      exhibit: this.store.findRecord('exhibit', params.exhibit_id, {include:'museum'}),
       museum: this.store.findAll('museum')
     });
   },
