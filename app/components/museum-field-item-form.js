@@ -7,12 +7,12 @@ export default Ember.Component.extend({
 		//  this.sendAction('action', param);
 		// }
 
-		exhibitFieldSave(newExhibitFields, exhibit) {
-
+		newMUseumFieldSave(newMuseumFields, museum) {
+			console.log(museum);
 			var controller = this;
-			newExhibitFields.set('exhibit', exhibit);
-			newExhibitFields.save().then(() => {
-				exhibit.save().then(() => {
+			newMuseumFields.set('museum', museum);
+			newMuseumFields.save().then(() => {
+				museum.save().then(() => {
 					controller.set('item', null);
 				})
 			});
